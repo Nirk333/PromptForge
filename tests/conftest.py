@@ -1,4 +1,5 @@
 import sys, os
 
-# Ensure pytest can import our src package
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
+# Add the project root to sys.path so pytest can import our src package
+root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.insert(0, root_dir)
