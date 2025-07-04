@@ -11,7 +11,7 @@ def test_get_prompts():
     assert isinstance(data, list)
     assert {"id": "1", "prompt": "Welcome to PromptForge!"} in data
     assert {"id": "2", "prompt": "Generate a witty tagline for AI."} in data
-def test_create_prompt(client):
+def test_create_prompt():
     response = client.post("/prompts", json={"prompt": "Automated test prompt"})
     assert response.status_code == 201
     data = response.json()
