@@ -3,7 +3,7 @@ from pydantic import BaseModel
 from typing import List, Dict
 import uuid
 
-# ---- Models & In-memory Storage ----
+# ---- Models & In-Memory Storage ----
 
 class Prompt(BaseModel):
     id: str
@@ -17,9 +17,11 @@ prompts_storage: List[Prompt] = [
     Prompt(id="2", prompt="Generate a witty tagline for AI.")
 ]
 
-# ---- App Setup & Routes ----
+# ---- App Initialization ----
 
 app = FastAPI()
+
+# ---- Routes ----
 
 @app.get("/", tags=["health"])
 async def read_root() -> Dict[str, str]:
