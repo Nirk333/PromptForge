@@ -1,2 +1,5 @@
 # Python dependencies go here
 pytest
+fastapi
+uvicorn[standard]
+httpx
