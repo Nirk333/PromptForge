@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
+const { getAllPrompts, addPrompt } = require('../models/promptModel');
 
 // GET /api/prompts
 router.get('/', (req, res) => {
-  // TODO: Fetch real prompts from DB or in-memory store
-  res.json({ prompts: [] });
+  const prompts = getAllPrompts();
+  res.json({ prompts });
 });
 
 module.exports = router;
