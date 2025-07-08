@@ -17,12 +17,16 @@ router.post('/', express.json(), (req, res) => {
     const newPrompt = addPrompt({ text });
     res.status(201).json(newPrompt);
   });
-  
-  // stub DELETE /api/prompts/:id
-router.delete('/:id', (req, res, next) => {
-    // TODO: implement prompt removal by ID
-    res.status(501).json({ error: 'Delete not implemented' });
-  });
-  
+
+ // DELETE /api/prompts/:id
+ router.delete('/:id', (req, res, next) => {
+   const { id } = req.params;
+   const deleted = removePromptById(id);
+   if (!deleted) {
+     return res.status(404).json({ error: 'Prompt not found' });
+   }
+   res.json(deleted);
+});
+
 
 module.exports = router;
