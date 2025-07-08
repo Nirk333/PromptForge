@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const { getAllPrompts, addPrompt } = require('../models/promptModel');
+const { getAllPrompts, addPrompt, removePromptById } = require('../models/promptModel');
+
 
 // GET /api/prompts
 router.get('/', (req, res) => {
