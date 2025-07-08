@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const { getAllPrompts, addPrompt } = require('../models/promptModel');
+const { getAllPrompts, addPrompt, removePromptById } = require('../models/promptModel');
+
 
 // GET /api/prompts
 router.get('/', (req, res) => {
@@ -17,5 +18,16 @@ router.post('/', express.json(), (req, res) => {
     const newPrompt = addPrompt({ text });
     res.status(201).json(newPrompt);
   });
+
+ // DELETE /api/prompts/:id
+ router.delete('/:id', (req, res, next) => {
+   const { id } = req.params;
+   const deleted = removePromptById(id);
+   if (!deleted) {
+     return res.status(404).json({ error: 'Prompt not found' });
+   }
+   res.json(deleted);
+});
+
 
 module.exports = router;

@@ -12,7 +12,15 @@ app.get('/', (req, res) => {
 
 app.use('/api/prompts', promptsRouter);
 
-app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
-});
+const errorHandler = require('./middleware/errorHandler');
+// … your app.use routes here …
+app.use(errorHandler);
 
+if (require.main === module) {
+    app.listen(PORT, () => {
+      console.log(`Server listening on port ${PORT}`);
+    });
+  }
+  
+  module.exports = app;
+  

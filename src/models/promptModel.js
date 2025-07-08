@@ -6,17 +6,38 @@ let prompts = [
     // Add more as needed...
   ];
   
+  /**
+   * Get all prompts.
+   * @returns {Array}
+   */
   function getAllPrompts() {
     return prompts;
   }
   
+  /**
+   * Add a new prompt.
+   * @param {{ text: string }} prompt
+   * @returns {object} the newly created prompt
+   */
   function addPrompt(prompt) {
-    // e.g., { text: 'New prompt' }
     const id = prompts.length ? prompts[prompts.length - 1].id + 1 : 1;
     const newPrompt = { id, ...prompt };
     prompts.push(newPrompt);
     return newPrompt;
   }
   
-  module.exports = { getAllPrompts, addPrompt };
+  /**
+   * Remove a prompt by its ID.
+   * @param {string} id
+   * @returns {object|null} the deleted prompt, or null if not found
+   */
+  function removePromptById(id) {
+    const numericId = parseInt(id, 10);
+    const index = prompts.findIndex(p => p.id === numericId);
+    if (index === -1) return null;
+    const [deleted] = prompts.splice(index, 1);
+    return deleted;
+  }
+  
+  module.exports = { getAllPrompts, addPrompt, removePromptById };
   
