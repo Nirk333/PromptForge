@@ -16,7 +16,11 @@ const errorHandler = require('./middleware/errorHandler');
 // … your app.use routes here …
 app.use(errorHandler);
 
-app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
-});
-
+if (require.main === module) {
+    app.listen(PORT, () => {
+      console.log(`Server listening on port ${PORT}`);
+    });
+  }
+  
+  module.exports = app;
+  
