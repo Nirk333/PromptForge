@@ -1,6 +1,7 @@
 // /src/web/app/login/page.tsx
 "use client";
 import React, { useState } from "react";
+import AuthLayout from "../../components/AuthLayout";
 
 export default function LoginPage() {
   const [loading, setLoading] = useState(false);
