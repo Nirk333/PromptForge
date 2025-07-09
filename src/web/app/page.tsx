@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 const features = [
   {
@@ -27,6 +28,23 @@ const features = [
 ];
 
 export default function Home() {
+  // Early access form state
+  const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setError("");
+    // Simple email regex validation
+    if (!/^[\w\.-]+@[\w\.-]+\.\w{2,}$/.test(email)) {
+      setError("Please enter a valid email.");
+      return;
+    }
+    setSubmitted(true);
+    setEmail("");
+  }
+
   return (
     <main className="min-h-screen flex flex-col items-center justify-center bg-[#fafbfc] px-6">
       {/* Logo */}
@@ -75,6 +93,44 @@ export default function Home() {
               <p className="text-gray-500 text-sm">{desc}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Early Access Section */}
+      <section className="w-full max-w-xl mx-auto mb-24 px-4">
+        <div className="bg-white/80 rounded-2xl shadow p-8 flex flex-col items-center">
+          <h2 className="text-xl font-bold text-gray-900 mb-2 text-center">
+            🚀 Early Access
+          </h2>
+          <p className="text-gray-600 text-center mb-6">
+            Be first in line for Queryve! Drop your email and we’ll ping you when we launch.
+          </p>
+          <form className="w-full flex flex-col sm:flex-row gap-4" onSubmit={handleSubmit}>
+            <input
+              type="email"
+              required
+              value={email}
+              disabled={submitted}
+              onChange={e => setEmail(e.target.value)}
+              placeholder="you@email.com"
+              className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black text-base"
+            />
+            <button
+              type="submit"
+              disabled={submitted}
+              className="bg-black text-white rounded-lg px-6 py-3 font-semibold text-base transition hover:bg-gray-800 disabled:opacity-60"
+            >
+              {submitted ? "Added!" : "Request Early Access"}
+            </button>
+          </form>
+          {error && (
+            <p className="mt-4 text-red-500 text-sm">{error}</p>
+          )}
+          {submitted && (
+            <p className="mt-4 text-green-600 text-sm">
+              You’re on the list! We’ll let you know when Queryve goes live.
+            </p>
+          )}
         </div>
       </section>
     </main>
