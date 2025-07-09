@@ -19,3 +19,25 @@ describe('DELETE /api/prompts/:id', () => {
     expect(del.body).toHaveProperty('id', id);
   });
 });
+describe('Authentication guard on /api/prompts', () => {
+  it('rejects unauthenticated GET requests', async () => {
+    const res = await request(app).get('/api/prompts');
+    expect(res.status).toBe(401);
+    expect(res.body).toHaveProperty('error', 'Authentication required');
+  });
+
+  it('rejects unauthenticated POST requests', async () => {
+    const res = await request(app)
+      .post('/api/prompts')
+      .send({ text: 'Test' });
+    expect(res.status).toBe(401);
+    expect(res.body).toHaveProperty('error', 'Authentication required');
+  });
+
+  it('rejects unauthenticated DELETE requests', async () => {
+    const res = await request(app).delete('/api/prompts/1');
+    expect(res.status).toBe(401);
+    expect(res.body).toHaveProperty('error', 'Authentication required');
+  });
+});
+
