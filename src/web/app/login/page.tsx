@@ -21,7 +21,7 @@ export default function LoginPage() {
   return (
     <div className="flex flex-col min-h-screen items-center justify-center bg-gray-100">
       <div className="bg-white rounded-2xl shadow-xl p-8 flex flex-col gap-4 w-full max-w-sm">
-        <h1 className="text-2xl font-bold mb-4 text-center">Sign in to PromptForge</h1>
+        <h1 className="text-2xl font-bold mb-4 text-center">Sign in to queryve</h1>
         {error && (
           <div className="text-red-500 text-center mb-2">{error}</div>
         )}

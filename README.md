@@ -1,8 +1,8 @@
-# PromptForge
+# queryve
 
 **A prompt-as-a-service micro-AI platform.**
 
-PromptForge provides a simple API and tooling to manage, version, and serve AI prompts as a micro-service for your applications.
+queryve provides a simple API and tooling to manage, version, and serve AI prompts as a micro-service for your applications.
 
 ## Repository Structure
 

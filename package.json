@@ -1,7 +1,7 @@
 {
-  "name": "promptforge",
+  "name": "queryve",
   "version": "1.0.0",
-  "description": "@\"\r # PromptForge",
+  "description": "@\"\r # queryve",
   "main": "index.js",
   "directories": {
     "doc": "docs",

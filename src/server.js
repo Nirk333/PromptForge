@@ -28,7 +28,7 @@ const authRouter = require('./routes/auth');
 
 // Root endpoint
 app.get('/', (req, res) => {
-  res.send('PromptForge API is up and running!');
+  res.send('queryve API is up and running!');
 });
 
 // Mount routers
