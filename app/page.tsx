@@ -6,7 +6,12 @@ export default function Home() {
     <main className="min-h-screen bg-[#f8fafc] flex flex-col items-center justify-center px-4">
       <div className="max-w-2xl w-full">
         <div className="flex flex-col items-center mb-8">
-          <Image src="/logo-queryve.svg" alt="Queryve Logo" width={180} height={38} />
+          <Image
+            src="/logos/logo-queryve.svg"
+            alt="Queryve Logo"
+            width={180}
+            height={38}
+          />
           <h1 className="text-4xl font-bold mb-2">Queryve</h1>
           <p className="text-xl font-medium text-gray-700 mb-4">AI Prompt Engineering Evolved</p>
           <p className="text-gray-600 text-center">
