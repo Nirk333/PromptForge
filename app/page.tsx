@@ -1,6 +1,6 @@
 "use client";
 
-import Logo from "../src/components/Logo";
+import Logo from "@/components/Logo";
 
 export default function Home() {
   return (
