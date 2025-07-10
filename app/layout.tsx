@@ -22,8 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${robotoMono.variable} antialiased`}>
-        <header style={{ padding: "1rem" }}>
-                 </header>
+        
         {children}
       </body>
     </html>
