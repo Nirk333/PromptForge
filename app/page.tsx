@@ -1,3 +1,5 @@
+// Restored feature cards - testing save
+
 "use client";
 
 import Logo from "@/components/Logo";
