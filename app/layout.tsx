@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
 import { Inter, Roboto_Mono } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
+
+const montserrat = Montserrat({
+  weight: ["700"],
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+});
+
 
 const inter = Inter({
   variable: "--font-inter",
@@ -21,7 +29,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${robotoMono.variable} antialiased`}>
+      <body className={`${montserrat.variable} ${inter.variable} ${robotoMono.variable} antialiased`}>
                 {children}
       </body>
     </html>
