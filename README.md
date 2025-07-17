@@ -4,6 +4,7 @@
 _The all-in-one platform for prompt creators, teams, and enterprises to design, manage, and launch AI workflows—at scale._
 
 ---
+Queryve provides a simple API and tooling to manage, version, and serve AI prompts as a micro-service for your applications.
 
 ## 🚀 What is Queryve?
 
@@ -43,22 +44,24 @@ git clone https://github.com/Nirk333/Queryve.git
 cd Queryve
 npm install
 npm run dev
-## 🤝 Contributing
-Want to shape the future of prompt engineering? PRs and issues are welcome!
-See [CONTRIBUTING.md](CONTRIBUTING.md) for the style guide, roadmap, and pro tips.
 
-## 📄 License
+🤝 Contributing
+Want to shape the future of prompt engineering? PRs and issues are welcome!
+See CONTRIBUTING.md for the style guide, roadmap, and pro tips.
+
+📄 License
 MIT — because good ideas should travel fast, but not free-for-all.
 
-## 🌐 Links
-- **Product:** https://queryve.com
-- **Docs:** Coming soon
-- **GitHub:** https://github.com/Nirk333/Queryve
+🌐 Links
+Product: https://queryve.com
 
-## 👤 About
-Created and maintained by [Nirk333](https://github.com/Nirk333) and the Queryve crew.
+Docs: Coming soon
+
+GitHub: https://github.com/Nirk333/Queryve
+
+👤 About
+Created and maintained by Nirk333 and the Queryve crew.
 Powering prompt professionals everywhere.
 
-> **Queryve — The nerve center for your AI prompt universe.**
->
-> Build. Collaborate. Deploy. Evolve.
+Queryve — The nerve center for your AI prompt universe.
+Build. Collaborate. Deploy. Evolve.
