@@ -63,47 +63,52 @@ export default function Home() {
 
         {/* FEATURE SECTION */}
         <section className="flex justify-center w-full mb-16">
-          <div className="flex flex-col max-w-xl w-auto">
-            {features.map((feature, i) => (
-              <div
-                key={i}
-                className="flex flex-col items-start pb-16 mb-16 last:mb-0 last:pb-0"
-                aria-label={`Feature: ${feature.title}`}
-              >
-                <div className="flex items-center mb-4">
-                  <span className="text-2xl">{feature.icon}</span>
-                  <span
-                    className="ml-14 font-bold text-lg text-gray-900"
-                    style={{ fontWeight: 700 }}
-                  >
-                    {feature.title}
-                  </span>
-                </div>
-                <div className="ml-16 text-gray-700 text-base leading-relaxed">
-                  {feature.description}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* EMAIL SIGNUP */}
-        <form className="flex flex-col sm:flex-row items-center gap-2 justify-center">
-          <input
-            className="px-4 py-2 rounded border border-gray-300 w-full sm:w-auto focus:outline-none focus:ring-2 focus:ring-gray-900 transition"
-            type="email"
-            placeholder="you@email.com"
-            aria-label="Your email address"
-            required
-          />
-          <button
-            type="submit"
-            className="bg-gradient-to-r from-gray-900 to-gray-800 text-white px-8 py-3 rounded-lg shadow hover:from-gray-800 hover:to-black transition font-bold text-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
-            aria-label="Request Early Access"
+  <div className="flex flex-col max-w-xl w-auto space-y-12">
+    {features.map((feature, i) => (
+      <div
+        key={i}
+        className="flex flex-col items-start"
+        aria-label={`Feature: ${feature.title}`}
+      >
+        <div className="flex items-center mb-4">
+          <span className="text-2xl">{feature.icon}</span>
+          <span
+            className="ml-14 font-bold text-lg text-gray-900"
+            style={{ fontWeight: 700 }}
           >
-            Request Early Access
-          </button>
-        </form>
+            {feature.title}
+          </span>
+        </div>
+        <div className="ml-16 text-gray-700 text-base leading-relaxed">
+          {feature.description}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+        {/* EMAIL SIGNUP */}
+        <form
+  className="flex flex-col sm:flex-row items-center justify-center mt-16 w-full"
+>
+  <input
+    className="
+      px-4 py-2 rounded border border-gray-300 w-[340px] max-w-full
+      focus:outline-none focus:ring-2 focus:ring-gray-900 transition
+      mb-4 sm:mb-0 sm:mr-8
+    "
+    type="email"
+    placeholder="you@email.com"
+    aria-label="Your email address"
+    required
+  />
+  <button
+    type="submit"
+    className="bg-gradient-to-r from-gray-900 to-gray-800 text-white px-8 py-3 rounded-lg shadow hover:from-gray-800 hover:to-black transition font-bold text-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+    aria-label="Request Early Access"
+  >
+    Request Early Access
+  </button>
+</form>
       </div>
     </main>
   );
