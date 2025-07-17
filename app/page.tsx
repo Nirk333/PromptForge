@@ -70,25 +70,30 @@ export default function Home() {
         className="flex flex-col items-start"
         aria-label={`Feature: ${feature.title}`}
       >
-        <div className="flex items-center mb-4">
+        <div className="flex items-center mb-2">
           <span className="text-2xl">{feature.icon}</span>
           <span
-            className="ml-14 font-bold text-lg text-gray-900"
-            style={{ fontWeight: 700 }}
+            className="ml-14 text-[1.18rem] text-gray-900 font-[600]"
+            style={{ fontFamily: "var(--font-montserrat)" }}
           >
             {feature.title}
           </span>
         </div>
-        <div className="ml-16 text-gray-700 text-base leading-relaxed">
+        <div
+          className="ml-16 text-gray-700 text-[0.97rem] leading-relaxed font-normal"
+          style={{ fontFamily: "var(--font-montserrat)" }}
+        >
           {feature.description}
         </div>
       </div>
     ))}
   </div>
 </section>
+
+
         {/* EMAIL SIGNUP */}
         <form
-  className="flex flex-col sm:flex-row items-center justify-center mt-16 w-full"
+  className="flex flex-col sm:flex-row items-center justify-center mt-16 w-full mt-14"
 >
   <input
     className="
